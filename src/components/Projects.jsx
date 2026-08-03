@@ -3,7 +3,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FiGithub, FiExternalLink } from 'react-icons/fi';
 import Onboarding from '../assets/onboarding.png';
-// import UrlShortener from '../assets/url-shortener.png';
+import UrlShortener from '../assets/url.png';
 
 const Projects = () => {
   const projects = [
@@ -19,10 +19,10 @@ const Projects = () => {
    {
   title: 'URL Shortener Web App',
   description: 'Full-stack URL shortening platform with secure user authentication, personalized link management, and real-time analytics tracking.',
-  image: Onboarding, 
+  image: UrlShortener, 
   tech: ['React', 'Flask', 'MySQL', 'bcrypt'],
   github: 'https://github.com/roshan13ghimire/URLShortener_with_Authentication_System',
-  live: '#',
+  live: 'https://url-shortener-with-authentication-s.vercel.app/',
 },
     {
   title: 'Telegram Stock Scraping Bot',

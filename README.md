@@ -1,16 +1,81 @@
-# React + Vite
+# Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A clean, professional portfolio site built with React, Vite, and Tailwind CSS —
+designed to be scanned by a recruiter in under two minutes.
 
-Currently, two official plugins are available:
+## Tech stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React 18 (Vite)
+- Tailwind CSS
+- Framer Motion (subtle fade/slide reveals only)
+- React Icons
 
-## React Compiler
+## Getting started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm install
+npm run dev
+```
 
-## Expanding the Oxlint configuration
+The site runs at `http://localhost:5173`.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+```bash
+npm run build     # production build → /dist
+npm run preview   # preview the production build locally
+```
+
+## Customizing the content
+
+Almost everything on the page is driven by plain data files in `src/data/`,
+so you shouldn't need to touch component code to make it yours:
+
+| File | Controls |
+|---|---|
+| `src/data/personalInfo.js` | Name, role, tagline, contact links, resume URL, About text |
+| `src/data/skills.js` | Skill categories and items |
+| `src/data/projects.js` | Project cards (title, description, tech, links) |
+| `src/data/experience.js` | Work experience timeline |
+| `src/data/education.js` | Education entries |
+| `src/data/certifications.js` | Certifications (leave the array empty to hide the section) |
+| `src/data/navLinks.js` | Navbar links |
+
+### Assets to replace
+
+- `public/profile-placeholder.svg` — swap for your real photo (update
+  `photoUrl` in `personalInfo.js` to match the new filename).
+- `public/resume.pdf` — add your resume PDF here (the Resume button already
+  points at `/resume.pdf`).
+- `public/projects/placeholder-*.svg` — swap for real project screenshots.
+
+## Contact form
+
+The contact form has no backend — submitting it opens a pre-filled email in
+the visitor's mail client, addressed to the email in `personalInfo.js`. If
+you'd rather accept submissions without leaving the page, wire up a service
+like [Formspree](https://formspree.io) or [EmailJS](https://www.emailjs.com/)
+inside `src/components/sections/Contact.jsx`'s `handleSubmit` function.
+
+## Project structure
+
+```
+src/
+  components/
+    layout/      Navbar, Footer, Container
+    ui/          Button, Badge, SectionHeading, Reveal (shared, reusable)
+    sections/    One component per page section (Hero, About, Skills, ...)
+  data/          All editable content, separate from markup
+  hooks/         useScrolled, useActiveSection
+  App.jsx
+  main.jsx
+  index.css
+```
+
+## Deployment
+
+This is a static Vite app, so it deploys cleanly to Vercel, Netlify, or
+GitHub Pages:
+
+**Vercel:** import the repo at [vercel.com/new](https://vercel.com/new) —
+it auto-detects Vite, no configuration needed.
+
+**Netlify:** build command `npm run build`, publish directory `dist`.

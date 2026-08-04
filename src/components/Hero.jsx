@@ -3,6 +3,7 @@ import React from 'react';
 import { FiDownload, FiMail, FiGithub, FiLinkedin, FiArrowRight } from 'react-icons/fi';
 import { motion } from 'framer-motion';
 import profilePhoto from '../assets/profile.jpg';
+import resumePDF from '../assets/Roshan_Ghimire_Resume.pdf';
 
 const Hero = () => {
   const fadeInUp = {
@@ -81,7 +82,7 @@ const Hero = () => {
     <motion.a
       whileHover={{ scale: 1.03 }}
       whileTap={{ scale: 0.97 }}
-      href="/resume.pdf"
+      href={resumePDF} target="_blank"
       download
       className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-amber-500 hover:from-purple-700 hover:to-amber-600 dark:from-purple-500 dark:to-amber-500 dark:hover:from-purple-600 dark:hover:to-amber-600 text-white font-medium rounded-lg transition-all shadow-lg shadow-purple-200 dark:shadow-purple-900/30"
     >

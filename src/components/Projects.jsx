@@ -1,4 +1,4 @@
-// components/Projects.jsx - Updated with new colors
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FiGithub, FiExternalLink } from 'react-icons/fi';

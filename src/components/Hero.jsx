@@ -138,17 +138,17 @@ const Hero = () => {
   <div className="relative w-64 sm:w-72 md:w-80 lg:w-96">
     {/* Photo container with clean presentation */}
     <div className="relative overflow-hidden rounded-2xl shadow-2xl">
-      <motion.div
-        whileHover={{ scale: 1.02 }}
-        transition={{ duration: 0.3 }}
-        className="rounded-2xl overflow-hidden border-2 border-gray-700 bg-gray-800 relative aspect-[4/5]"
-        style={{
-          backgroundImage: `url(${profilePhoto})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center top 15%',
-          backgroundRepeat: 'no-repeat',
-        }}
-      >
+<motion.div
+  whileHover={{ scale: 1.02 }}
+  transition={{ duration: 0.3 }}
+  className="rounded-2xl overflow-hidden border-2 border-gray-700 bg-gray-800 relative h-96"
+  style={{
+    backgroundImage: `url(${profilePhoto})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center 10%",
+    backgroundRepeat: "no-repeat",
+  }}
+>
         {/* ONLY subtle gold shimmer - no dark gradient */}
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-400/5 to-transparent animate-shimmer"></div>
         

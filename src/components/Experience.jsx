@@ -10,12 +10,12 @@ const Experience = () => {
   period: 'Jan,2022 - March,2024',
   location: 'Nepal',
   description: [
-    'Developed and enhanced full-stack web applications using Python, Django, Django REST Framework, and PostgreSQL',
-    'Designed and implemented RESTful APIs to support application features and improve communication between frontend and backend systems',
-    'Created database models, optimized queries, and managed backend logic to support reliable application performance',
-    'Debugged application issues, tested new features, and implemented fixes to improve software stability and user experience',
-    'Collaborated with developers and stakeholders to understand requirements and deliver practical software solutions',
-    'Used Git for version control and followed structured development workflows to maintain clean and organized code',
+    'Developed and maintained full-stack web applications using Python, Django, Django REST Framework, and PostgreSQL, building scalable backend systems and user-focused web solutions.',
+    'Designed and developed RESTful APIs to support application features and enable efficient communication between frontend interfaces and backend services.',
+    'Built database models, managed data workflows, and optimized queries to improve application performance and reliability.',
+    'Investigated and resolved software issues through debugging, testing, and code improvements to enhance system stability and user experience.',
+    'Collaborated with developers and stakeholders to analyze requirements, deliver new features, and improve existing application functionality.',
+    'Applied Git-based version control and structured development practices to maintain clean, maintainable, and organized code.',
   ],
 },
    {

@@ -20,7 +20,7 @@ const Projects = () => {
   title: 'URL Shortener Web App',
   description: 'Full-stack URL shortening platform with secure user authentication, personalized link management, and real-time analytics tracking.',
   image: UrlShortener, 
-  tech: ['React', 'Flask', 'MySQL', 'bcrypt'],
+  tech: ['React', 'Flask', 'PostgreSQL', 'bcrypt'],
   github: 'https://github.com/roshan13ghimire/URLShortener_with_Authentication_System',
   live: 'https://url-shortener-with-authentication-s.vercel.app/',
 },

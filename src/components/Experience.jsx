@@ -1,113 +1,91 @@
-// components/Experience.jsx
-import React from 'react';
-import { motion } from 'framer-motion';
 
-const Experience = () => {
-  const experiences = [
-{
-  title: 'Software Engineer',
-  company: 'TechAlias Solution Pvt. Ltd.',
-  period: 'Jan,2022 - March,2024',
-  location: 'Nepal',
-  description: [
-    'Developed and maintained full-stack web applications using Python, Django, Django REST Framework, and PostgreSQL, building scalable backend systems and user-focused web solutions.',
-    'Designed and developed RESTful APIs to support application features and enable efficient communication between frontend interfaces and backend services.',
-    'Built database models, managed data workflows, and optimized queries to improve application performance and reliability.',
-    'Investigated and resolved software issues through debugging, testing, and code improvements to enhance system stability and user experience.',
-    'Collaborated with developers and stakeholders to analyze requirements, deliver new features, and improve existing application functionality.',
-    'Applied Git-based version control and structured development practices to maintain clean, maintainable, and organized code.',
-  ],
-},
-   {
-  title: 'Lecturer - Computer Applications',
-  company: 'School of Environmental Science and Management',
-  period: 'Jan 2023 - March 2024',
-  location: 'Nepal',
-  description: [
-    'Taught programming, web development, and database management concepts to undergraduate computer application students',
-    'Designed practical coursework, coding assignments, and lab exercises to strengthen software development skills',
-    'Guided students in developing academic projects involving application design, programming, and database integration',
-    'Provided technical feedback, debugging guidance, and support to help students improve coding and problem-solving abilities',
-    'Explained software engineering concepts including programming logic, database design, and application development practices',
-    'Collaborated with faculty members on curriculum improvements and technology-focused academic activities',
-  ],
-},
-{
-  title: 'Lecturer - Computer Engineering',
-  company: 'Acme Engineering College',
-  period: 'Sept 2022 - March 2024',
-  location: 'Nepal',
-  description: [
-    'Taught computer engineering courses including programming fundamentals, web development, and database concepts',
-    'Developed hands-on labs, assignments, and practical exercises focused on software development skills',
-    'Guided students in designing and building academic projects using programming and database technologies',
-    'Explained software development concepts including algorithms, data structures, and application design principles',
-    'Provided technical guidance, debugging support, and code feedback to help students improve problem-solving skills',
-    'Managed classroom technology and supported students in using development tools and programming environments',
-  ],
-},
+const experiences = [
+  {
+    title: "Software Engineer",
+    company: "TechAlias Solution Pvt. Ltd.",
+    location: "Nepal",
+    period: "Jan 2022 – Mar 2024",
+    details: [
+      "Developed and maintained web applications using Python, Django, Django REST Framework, and PostgreSQL.",
+      "Built REST APIs for inventory management and other application features, replacing manual workflows with database-backed processes.",
+      "Designed relational database models, worked with SQL queries, and integrated backend services with frontend interfaces.",
+      "Collaborated with developers on debugging, code reviews, and feature development.",
+    ],
+  },
+  {
+    title: "Lecturer – Computer Applications",
+    company: "School of Environmental Science and Management",
+    location: "Nepal",
+    period: "Jan 2023 – Mar 2024",
+    details: [
+      "Taught programming, web development, and database management to undergraduate students.",
+      "Prepared coding assignments and practical lab exercises.",
+      "Guided students through application development and database-related projects.",
+    ],
+  },
+  {
+    title: "Lecturer – Computer Engineering",
+    company: "Acme Engineering College",
+    location: "Nepal",
+    period: "Sep 2022 – Mar 2024",
+    details: [
+      "Delivered lectures on programming fundamentals, web development, and database systems.",
+      "Developed practical assignments, laboratory exercises, and project activities.",
+      "Provided debugging assistance and code feedback to students.",
+    ],
+  },
+];
 
-  ];
-
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
-  };
-
+export default function Experience() {
   return (
-    <section id="experience" className="py-24">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-100px' }}
-          variants={fadeInUp}
-          className="text-center max-w-3xl mx-auto mb-16"
-        >
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Professional Experience
-          </h2>
-          <div className="w-16 h-1 bg-blue-600 dark:bg-blue-400 mx-auto rounded-full"></div>
-        </motion.div>
+    <section
+      id="experience"
+      className="scroll-mt-20 border-t border-neutral-200 bg-white px-6 py-14 sm:py-16 lg:px-8"
+    >
+      <div className="mx-auto max-w-6xl">
+        <h2 className="mb-8 text-2xl font-semibold tracking-tight text-neutral-900">
+          Experience
+        </h2>
 
-        <div className="max-w-4xl mx-auto">
-          {experiences.map((exp, idx) => (
-            <motion.div
-              key={idx}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: '-50px' }}
-              variants={fadeInUp}
-              transition={{ delay: idx * 0.1 }}
-              className="relative pl-8 pb-12 last:pb-0 border-l-2 border-blue-200 dark:border-blue-800"
+        <div className="divide-y divide-neutral-200 border-t border-neutral-200">
+          {experiences.map((exp) => (
+            <article
+              key={`${exp.company}-${exp.title}`}
+              className="grid gap-3 py-7 md:grid-cols-[190px_minmax(0,1fr)] md:gap-10"
             >
-              <div className="absolute left-[-9px] top-0 w-4 h-4 bg-blue-600 dark:bg-blue-400 rounded-full"></div>
-              <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm border border-gray-200 dark:border-gray-700 ml-4">
-                <div className="flex flex-wrap items-start justify-between mb-2">
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-white">{exp.title}</h3>
-                    <p className="text-blue-600 dark:text-blue-400 font-medium">{exp.company}</p>
-                  </div>
-                  <span className="text-sm text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full">
-                    {exp.period}
-                  </span>
-                </div>
-                <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">{exp.location}</p>
-                <ul className="space-y-2">
-                  {exp.description.map((item, i) => (
-                    <li key={i} className="text-gray-600 dark:text-gray-300 text-sm flex items-start gap-2">
-                      <span className="text-blue-600 dark:text-blue-400 mt-1">▹</span>
-                      {item}
+              <div>
+                <p className="text-[13px] text-neutral-500">
+                  {exp.period}
+                </p>
+                <p className="mt-1 text-xs text-neutral-400">
+                  {exp.location}
+                </p>
+              </div>
+
+              <div className="max-w-3xl">
+                <h3 className="text-[18px] font-semibold text-neutral-900">
+                  {exp.title}
+                </h3>
+
+                <p className="mt-1 text-sm text-neutral-600">
+                  {exp.company}
+                </p>
+
+                <ul className="mt-4 list-disc space-y-2 pl-5 marker:text-neutral-400">
+                  {exp.details.map((detail) => (
+                    <li
+                      key={detail}
+                      className="pl-1 text-[14px] leading-6 text-neutral-600"
+                    >
+                      {detail}
                     </li>
                   ))}
                 </ul>
               </div>
-            </motion.div>
+            </article>
           ))}
         </div>
       </div>
     </section>
   );
-};
-
-export default Experience;
+}

@@ -120,7 +120,7 @@ export default function Hero() {
               variants={itemVariants}
               className="mt-6 max-w-lg text-[16px] leading-8 text-[#62685F]"
             >
-              I'm a software developer with over two years
+              I'm a software engineer with over two years
               of professional experience, specializing in
               backend systems, REST APIs, and full-stack
               web applications.

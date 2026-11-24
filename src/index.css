@@ -5,34 +5,70 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --color-background: #ffffff;
+  --color-surface: #f7f7f2;
+  --color-primary: #26352a;
+  --color-accent: #55705a;
+  --color-heading: #20251f;
+  --color-text: #62685f;
+  --color-border: #e2e6df;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 4rem;
+    scroll-padding-top: 6rem;
   }
 
   body {
     margin: 0;
+    min-width: 320px;
     font-family: 'Inter', system-ui, sans-serif;
     font-size: 16px;
-
-    @apply bg-white text-neutral-900 antialiased;
+    background-color: var(--color-background);
+    color: var(--color-heading);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   ::selection {
-    background-color: #e5e5e5;
-    color: #171717;
+    background-color: #dce6d7;
+    color: #26352a;
+  }
+
+  a,
+  button {
+    -webkit-tap-highlight-color: transparent;
   }
 
   a:focus-visible,
   button:focus-visible {
-    outline: 2px solid #525252;
-    outline-offset: 3px;
+    outline: 2px solid #55705a;
+    outline-offset: 4px;
+  }
+
+  #contact a:focus-visible,
+  footer a:focus-visible {
+    outline: 2px solid #dce6d7;
+    outline-offset: 4px;
+  }
+
+  img {
+    max-width: 100%;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

@@ -91,7 +91,7 @@ export default function Navbar() {
             </p>
 
             <p className="mt-0.5 text-[11px] text-[#666D63]">
-              Software Developer
+              Software Engineer
             </p>
           </div>
         </a>

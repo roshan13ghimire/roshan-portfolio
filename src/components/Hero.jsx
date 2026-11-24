@@ -109,7 +109,7 @@ export default function Hero() {
               variants={itemVariants}
               className="text-[40px] font-semibold leading-[1.12] tracking-[-0.045em] text-[#20251F] sm:text-[48px] lg:text-[54px]"
             >
-              Software Developer.
+              Software Engineer.
               <span className="mt-2 block text-[24px] leading-snug tracking-tight text-[#55705A] sm:text-[30px] lg:text-[34px]">
                 Backend focused. Full-stack capable.
               </span>
